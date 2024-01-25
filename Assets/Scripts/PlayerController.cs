@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("speed", Mathf.Abs(move));
         if ((move > 0 && !isFacingRight) || (move < 0 && isFacingRight)) Flip();
 
-        isGrounded = Physics2D.OverlapCircle(groundChecker.position, .1f, groundLayer);
+        isGrounded = Physics2D.OverlapCircle(groundChecker.position, .001f, groundLayer);
         animator.SetBool("isGrounded", isGrounded);
         animator.SetFloat("verticalSpeed", rigidbody2d.velocity.y);
     }
